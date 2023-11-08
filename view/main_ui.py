@@ -16,9 +16,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QHBoxLayout, QHeaderView, QLabel,
-    QLineEdit, QMainWindow, QPushButton, QSizePolicy,
-    QSpacerItem, QTabWidget, QTableWidget, QTableWidgetItem,
-    QVBoxLayout, QWidget)
+                               QLineEdit, QMainWindow, QPushButton, QSizePolicy,
+                               QSpacerItem, QTabWidget, QTableWidget, QTableWidgetItem,
+                               QVBoxLayout, QWidget, QAbstractItemView)
 import view.resource_rc
 
 class Ui_MainWindow(object):
@@ -75,6 +75,12 @@ class Ui_MainWindow(object):
         self.verticalLayout_3.addWidget(self.label_2)
 
         self.tb_emprestimos_ativos = QTableWidget(self.tab_inicio)
+        header_emprestimos_ativos = self.tb_emprestimos_ativos.horizontalHeader()
+        header_emprestimos_ativos.setSectionResizeMode(QHeaderView.Stretch)
+        self.tb_emprestimos_ativos.verticalHeader().hide()
+        self.tb_emprestimos_ativos.setSelectionBehavior(QTableWidget.SelectRows)
+        self.tb_emprestimos_ativos.setEditTriggers(QTableWidget.NoEditTriggers)
+        self.tb_emprestimos_ativos.setSelectionMode(QAbstractItemView.SingleSelection)
         if (self.tb_emprestimos_ativos.columnCount() < 4):
             self.tb_emprestimos_ativos.setColumnCount(4)
         __qtablewidgetitem = QTableWidgetItem()
@@ -104,6 +110,7 @@ class Ui_MainWindow(object):
 
         self.txt_data_inicial = QLineEdit(self.tab_relatorio)
         self.txt_data_inicial.setObjectName(u"txt_data_inicial")
+        self.txt_data_inicial.setInputMask("99/99/9999;_")
 
         self.horizontalLayout.addWidget(self.txt_data_inicial)
 
@@ -114,6 +121,7 @@ class Ui_MainWindow(object):
 
         self.txt_data_final = QLineEdit(self.tab_relatorio)
         self.txt_data_final.setObjectName(u"txt_data_final")
+        self.txt_data_final.setInputMask("99/99/9999;_")
 
         self.horizontalLayout.addWidget(self.txt_data_final)
 
@@ -126,6 +134,12 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.addLayout(self.horizontalLayout)
 
         self.tb_relatorio = QTableWidget(self.tab_relatorio)
+        header_relatorio = self.tb_relatorio.horizontalHeader()
+        header_relatorio.setSectionResizeMode(QHeaderView.Stretch)
+        self.tb_relatorio.verticalHeader().hide()
+        self.tb_relatorio.setSelectionBehavior(QTableWidget.SelectRows)
+        self.tb_relatorio.setEditTriggers(QTableWidget.NoEditTriggers)
+        self.tb_relatorio.setSelectionMode(QAbstractItemView.SingleSelection)
         if (self.tb_relatorio.columnCount() < 3):
             self.tb_relatorio.setColumnCount(3)
         __qtablewidgetitem4 = QTableWidgetItem()
@@ -207,6 +221,12 @@ class Ui_MainWindow(object):
         self.verticalLayout_6.addLayout(self.horizontalLayout_3)
 
         self.tb_funcionarios = QTableWidget(self.coluna_esquerda)
+        header_funcionarios = self.tb_funcionarios.horizontalHeader()
+        header_funcionarios.setSectionResizeMode(QHeaderView.Stretch)
+        self.tb_funcionarios.verticalHeader().hide()
+        self.tb_funcionarios.setSelectionBehavior(QTableWidget.SelectRows)
+        self.tb_funcionarios.setEditTriggers(QTableWidget.NoEditTriggers)
+        self.tb_funcionarios.setSelectionMode(QAbstractItemView.SingleSelection)
         if (self.tb_funcionarios.columnCount() < 2):
             self.tb_funcionarios.setColumnCount(2)
         __qtablewidgetitem7 = QTableWidgetItem()
@@ -260,6 +280,12 @@ class Ui_MainWindow(object):
         self.verticalLayout_5.addLayout(self.horizontalLayout_4)
 
         self.tb_uniforme = QTableWidget(self.coluna_direita)
+        header_uniformes = self.tb_uniforme.horizontalHeader()
+        header_uniformes.setSectionResizeMode(QHeaderView.Stretch)
+        self.tb_uniforme.verticalHeader().hide()
+        self.tb_uniforme.setSelectionBehavior(QTableWidget.SelectRows)
+        self.tb_uniforme.setEditTriggers(QTableWidget.NoEditTriggers)
+        self.tb_uniforme.setSelectionMode(QAbstractItemView.SingleSelection)
         if (self.tb_uniforme.columnCount() < 1):
             self.tb_uniforme.setColumnCount(1)
         __qtablewidgetitem9 = QTableWidgetItem()

@@ -41,10 +41,20 @@ class Ui_Dialog(object):
 
         self.verticalLayout.addWidget(self.lbl_cpf_emprestimo)
 
+        self.horizontalLayout_2 = QHBoxLayout()
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.txt_cpf_emprestimo = QLineEdit(self.widget)
         self.txt_cpf_emprestimo.setObjectName(u"txt_cpf_emprestimo")
 
-        self.verticalLayout.addWidget(self.txt_cpf_emprestimo)
+        self.horizontalLayout_2.addWidget(self.txt_cpf_emprestimo)
+
+        self.btn_consulta_funcionario = QPushButton(self.widget)
+        self.btn_consulta_funcionario.setObjectName(u"btn_consulta_funcionario")
+
+        self.horizontalLayout_2.addWidget(self.btn_consulta_funcionario)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout_2)
 
         self.lbl_nome_emprestimo = QLabel(self.widget)
         self.lbl_nome_emprestimo.setObjectName(u"lbl_nome_emprestimo")
@@ -67,10 +77,10 @@ class Ui_Dialog(object):
 
         self.verticalLayout.addWidget(self.cb_tipo_uniforme)
 
-        self.pushButton = QPushButton(self.widget)
-        self.pushButton.setObjectName(u"pushButton")
+        self.btn_emprestar = QPushButton(self.widget)
+        self.btn_emprestar.setObjectName(u"btn_emprestar")
 
-        self.verticalLayout.addWidget(self.pushButton)
+        self.verticalLayout.addWidget(self.btn_emprestar)
 
 
         self.horizontalLayout.addWidget(self.widget)
@@ -84,10 +94,11 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Adicionar Emprestimo", None))
         self.lbl_cpf_emprestimo.setText(QCoreApplication.translate("Dialog", u"CPF Funcionario", None))
+        self.btn_consulta_funcionario.setText(QCoreApplication.translate("Dialog", u"Consultar", None))
         self.lbl_nome_emprestimo.setText(QCoreApplication.translate("Dialog", u"Nome do Funcionario", None))
         self.lbl_tipo_uniforme.setText(QCoreApplication.translate("Dialog", u"Tipo de Uniforme", None))
         self.cb_tipo_uniforme.setItemText(0, QCoreApplication.translate("Dialog", u"Selecione um Uniforme", None))
 
-        self.pushButton.setText(QCoreApplication.translate("Dialog", u"Confirmar", None))
+        self.btn_emprestar.setText(QCoreApplication.translate("Dialog", u"Confirmar", None))
     # retranslateUi
 
